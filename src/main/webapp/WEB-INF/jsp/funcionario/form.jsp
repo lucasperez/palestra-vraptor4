@@ -9,7 +9,9 @@
 <title>Formulário de Funcionário</title>
 </head>
 <body>
-	<div style="width:80%; margin-top:20px;">
+	<div style="width:80%; margin:20px;">
+		<h1>Cadastro de Funcionário</h1>
+		<a href="list" class="btn btn-success btn-default active" role="button">Listagem</a><br /><br />
 	    <form class="form-horizontal" role="form" action="<c:url value='/funcionario/salvar'/>" method="post">
 	      <input type="hidden" name="funcionario.id" value="${funcionario.id}">
 		  <div class="form-group">

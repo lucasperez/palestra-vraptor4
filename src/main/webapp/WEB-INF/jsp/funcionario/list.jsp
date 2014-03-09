@@ -9,28 +9,30 @@
 <title>Lista de Funcionários</title>
 </head>
 <body>
-	<h1>Lista de Funcionários</h1>
-	<a href="form" class="btn btn-success btn-lg active" role="button">Novo Funcionário</a><br /><br />
-	<table class="table table-striped">
-		<thead>
-			<th>Id</th>
-			<th>Nome</th>
-			<th>Telefone</th>
-			<th>Ação</th>
-		</thead>
-		<tbody>
-			<c:forEach items="${funcionarioList}" var="funcionario">
-				<tr>
-					<td>${funcionario.id}</td>
-					<td>${funcionario.nome}</td>
-					<td>${funcionario.telefone}</td>
-					<td>
-						<a href="form/${funcionario.id}" class="btn btn-info btn-default active" role="button">Editar Funcionário</a>
-						<a href="deletar/${funcionario.id}" class="btn btn-danger btn-default active" role="button">Excluir Funcionário</a>
-					</td>
-				</tr>
-			</c:forEach>
-		</tbody>
-	</table>
+	<div style="width:80%; margin:20px;">
+		<h1>Lista de Funcionários</h1>
+		<a href="form" class="btn btn-success btn-default active" role="button">Novo Funcionário</a><br /><br />
+		<table class="table table-striped">
+			<thead>
+				<th>Id</th>
+				<th>Nome</th>
+				<th>Telefone</th>
+				<th>Ação</th>
+			</thead>
+			<tbody>
+				<c:forEach items="${funcionarioList}" var="funcionario">
+					<tr>
+						<td>${funcionario.id}</td>
+						<td>${funcionario.nome}</td>
+						<td>${funcionario.telefone}</td>
+						<td>
+							<a href="form/${funcionario.id}" class="btn btn-info btn-default active" role="button">Editar Funcionário</a>
+							<a href="deletar/${funcionario.id}" class="btn btn-danger btn-default active" role="button">Excluir Funcionário</a>
+						</td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+	</div>
 </body>
 </html>
