@@ -23,7 +23,8 @@
 		  <div class="form-group">
 		    <label for="inputPassword3" class="col-sm-2 control-label">Telefone</label>
 		    <div class="col-sm-10">
-		      <input type="text" class="form-control" id="inputPassword3" placeholder="Telefone" name="funcionario.telefone" value="${funcionario.telefone}">
+		      <input type="text" class="form-control" id="inputPassword3" 
+		      placeholder="Telefone" name="funcionario.telefone" value="${funcionario.telefone}">
 		    </div>
 		  </div>
 		  <div class="form-group">

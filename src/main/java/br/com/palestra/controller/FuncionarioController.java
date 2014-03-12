@@ -10,6 +10,7 @@ import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
 import br.com.palestra.dao.FuncionarioDAO;
 import br.com.palestra.domain.Funcionario;
+import br.com.palestra.domain.Public;
 
 @Controller
 @Path("funcionario")
@@ -21,6 +22,7 @@ public class FuncionarioController {
 	@Inject
 	private Result result;
 	
+	@Public
 	public List<Funcionario> list() {
 		return funcionarioDAO.listAll();
 	}
