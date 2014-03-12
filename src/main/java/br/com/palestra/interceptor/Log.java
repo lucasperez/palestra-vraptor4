@@ -22,14 +22,17 @@ public class Log {
 	@Inject
 	private HttpServletRequest request;
 	
+	@Inject
+	private Date actualDate;
+	
 	@BeforeCall
 	public void before() {
-		System.out.println("antes da chamada: " + new Date());
+		System.out.println("antes da chamada: " + actualDate);
 	}
 	
 	@AfterCall
 	public void after() {
-		System.out.println("após a chamada: " + new Date());
+		System.out.println("após a chamada: " + actualDate);
 	}
 	
 	@Accepts
