@@ -13,6 +13,18 @@ public class PrimeiroController {
 	
 	@Inject
 	private Result result;
+	
+	 /**
+     * @deprecated CDI eyes only
+     */
+    protected PrimeiroController() {
+        this(null);
+    }
+
+    @Inject
+    public PrimeiroController(Result result) {
+        this.result = result;
+    }
 
 	@Path("pagina-inicial")
 	@Get
