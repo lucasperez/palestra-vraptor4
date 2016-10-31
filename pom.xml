@@ -1,5 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  
   <modelVersion>4.0.0</modelVersion>
   <groupId>palestra-vraptor</groupId>
   <artifactId>palestra-vraptor</artifactId>
@@ -90,12 +91,49 @@
 	            <source>1.7</source>
 	            <target>1.7</target>
 	        </configuration>
-	    </plugin>
-	    <plugin>
-          <groupId>org.mortbay.jetty</groupId>
-          <artifactId>jetty-maven-plugin</artifactId>
-          <version>8.1.3.v20120416</version>
-       </plugin>
+  	    </plugin>
+  	    <plugin>
+            <groupId>org.mortbay.jetty</groupId>
+            <artifactId>jetty-maven-plugin</artifactId>
+            <version>8.1.3.v20120416</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>2.3</version>
+          <configuration>
+            <failOnMissingWebXml>false</failOnMissingWebXml>
+            <outputDirectory>target/wildfly-8.2.0.Final/standalone/deployments</outputDirectory>
+            <warName>ROOT</warName>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-dependency-plugin</artifactId>
+          <version>2.10</version>
+          <executions>
+            <execution>
+              <id>unpack</id>
+              <phase>package</phase>
+              <goals>
+                <goal>unpack</goal>
+              </goals>
+              <configuration>
+                <artifactItems>
+                  <artifactItem>
+                    <groupId>org.wildfly</groupId>
+                    <artifactId>wildfly-dist</artifactId>
+                    <version>8.2.0.Final</version>
+                    <type>zip</type>
+                    <overWrite>false</overWrite>
+                    <outputDirectory>target</outputDirectory>
+                  </artifactItem>
+                </artifactItems>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
     </plugins>
   </build>
+
 </project>
